@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- ==================== META TAGS ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Faculté Maïngo Ködörö | Sciences de l'Éducation - Doctorat RCA</title>
+    <meta name="description" content="Faculté Maïngo Ködörö : Formation doctorale en Sciences de l'Éducation en République Centrafricaine. 13 disciplines, inscriptions ouvertes 2026.">
+    <meta name="keywords" content="faculté maïngo, sciences éducation, doctorat RCA, formation enseignant, université bangui, éducation centrafrique">
+    <meta name="author" content="Faculté Maïngo Ködörö">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ==================== BOOTSTRAP + ICONS ==================== -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- ==================== FAVICON ==================== -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+    
+    <style>
+    /* ===== STYLES GÉNÉRAUX ===== */
+    :root {
+        --navy-deep: #0a1a2f;
+        --navy-primary: #1a2b4c;
+        --navy-medium: #2c3e6e;
+        --navy-light: #4a5f8c;
+        --navy-pale: #b8c7e0;
+        --bg-light: #f8fafc;
+        --text-dark: #1e293b;
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+        --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+        --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --transition: all 0.3s ease;
+        --sky-deep: #0a1a2f;
+        --sky-pale: #b8c7e0;
+    }
+
+    * { 
+        box-sizing: border-box; 
+        margin: 0; 
+        padding: 0; 
+    }
+    
+    html { 
+        scroll-behavior: smooth; 
+        font-size: 16px; 
+    }
+    
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    a { 
+        text-decoration: none; 
+        color: inherit; 
+    }
+    
+    img { 
+        max-width: 100%; 
+        height: auto;
+        display: block;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+        background: var(--navy-primary);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+    }
+    
+    .nav-bar {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .logo-box {
+        width: 65px;
+        height: 65px;
+        border: 2px solid white;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        flex-shrink: 0;
+    }
+    
+    .logo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .nav-title-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-title-group span:first-child {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--navy-pale);
+    }
+    
+    .nav-title-group span:last-child {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    
+    .nav-links a {
+        color: white;
+        font-size: 0.95rem;
+        padding: 0.25rem 0;
+        border-bottom: 2px solid transparent;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        border-bottom-color: white;
+    }
+    
+    .nav-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    /* ====== MOBILE MENU ====== */
+    .mobile-menu {
+        display: none;
+        background: var(--navy-deep);
+        padding: 1rem;
+        width: 100%;
+    }
+    
+    .mobile-menu a {
+        display: block;
+        color: white;
+        padding: 0.75rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        cursor: pointer;
+    }
+    
+    .mobile-menu a:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-menu a.active {
+        background: var(--navy-primary);
+        border-radius: var(--radius-sm);
+    }
+    
+    .mobile-menu.show { 
+        display: block; 
+    }
+
+    /* ====== BOUTONS ====== */
+    .btn {
+        display: inline-block;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none;
+        font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+        background: white;
+        color: var(--navy-deep);
+    }
+    
+    .btn-primary:hover {
+        background: var(--navy-pale);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .btn-outline {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+    
+    .btn-outline:hover {
+        background: rgba(255,255,255,0.1);
+        transform: translateY(-2px);
+    }
+    
+    .btn-success {
+        background: #198754;
+        color: white;
+    }
+    
+    .btn-outline-primary {
+        border: 2px solid var(--navy-primary);
+        color: var(--navy-primary);
+        background: transparent;
+    }
+    
+    .btn-outline-danger {
+        border: 2px solid #dc3545;
+        color: #dc3545;
+        background: transparent;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+        background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
+        color: white;
+        padding: 3rem 1.5rem;
+        width: 100%;
+    }
+    
+    .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        align-items: center;
+    }
+    
+    .hero-kicker {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--navy-pale);
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        color: var(--navy-pale);
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .hero-meta {
+        font-size: 0.9rem;
+        color: var(--navy-pale);
+    }
+    
+    .hero-photo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .hero-photo {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.3);
+        aspect-ratio: 4/3;
+        position: relative;
+    }
+    
+    .hero-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .hero-photo span {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        background: rgba(0,0,0,0.5);
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+    }
+
+    /* ====== QUICK PATHS ====== */
+    .section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        color: var(--navy-deep);
+    }
+    
+    .section-subtitle {
+        color: #666;
+    }
+    
+    .paths {
+        background: white;
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .paths-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+    
+    .path-card {
+        background: var(--bg-light);
+        padding: 1.5rem;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--navy-pale);
+        transition: var(--transition);
+    }
+    
+    .path-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .path-label {
+        font-size: 0.8rem;
+        color: var(--navy-primary);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .path-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .path-desc {
+        color: #666;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .path-link {
+        color: var(--navy-primary);
+        font-weight: 600;
+    }
+
+    /* ====== PAGE TITLE ====== */
+    .page-title {
+        color: var(--navy-deep);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        border-left: 5px solid var(--navy-primary);
+        padding-left: 1rem;
+    }
+    
+    /* ====== CARD ====== */
+    .card {
+        background: white;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        padding: 1.5rem;
+    }
+    
+    .text-primary {
+        color: var(--navy-primary) !important;
+    }
+    
+    .alert {
+        padding: 1rem;
+        border-radius: var(--radius-sm);
+    }
+    
+    .alert-warning {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    .alert-primary {
+        background: #cfe2ff;
+        color: #084298;
+    }
+    
+    .alert-info {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
+
+    /* ====== GRILLE DISCIPLINES ====== */
+    .disciplines-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+    
+    .disc-card {
+        background: white;
+        padding: 1.2rem;
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: var(--shadow-sm);
+        border-left: 4px solid var(--navy-primary);
+        transition: var(--transition);
+    }
+    
+    .disc-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .disc-card i {
+        color: var(--navy-primary);
+        font-size: 1.5rem;
+        min-width: 2rem;
+    }
+    
+    .disc-card span {
+        font-weight: 500;
+    }
+
+    /* ====== FRAIS ====== */
+    .fee-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-md);
+        border-top: 5px solid var(--navy-primary);
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .fee-price {
+        font-size: 2rem;
+        color: var(--navy-deep);
+        font-weight: 700;
+        margin: 1rem 0;
+    }
+    
+    .fee-sub {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+    
+    .payment-guide {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-md);
+        margin-top: 2rem;
+    }
+    
+    .guide-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .guide-step {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--bg-light);
+        border-radius: var(--radius-sm);
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        background: var(--navy-primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .btn-cta {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        color: white;
+        transition: var(--transition);
+    }
+    
+    .btn-cta.primary {
+        background: var(--navy-deep);
+    }
+    
+    .btn-cta.secondary {
+        background: var(--navy-primary);
+    }
+    
+    .btn-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* ====== SECTION CONTACT AVEC PERSONNES CLÉS ====== */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    /* Formulaire */
+    .contact-form {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .contact-form h3 {
+        color: var(--navy-deep);
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-field {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-field input,
+    .form-field textarea {
+        width: 100%;
+        padding: 0.75rem 0;
+        border: none;
+        border-bottom: 2px solid #e0e0e0;
+        font-size: 1rem;
+        outline: none;
+        transition: var(--transition);
+        background: transparent;
+    }
+    
+    .form-field textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+    
+    .form-field label {
+        position: absolute;
+        top: 0.75rem;
+        left: 0;
+        color: #666;
+        transition: var(--transition);
+        pointer-events: none;
+    }
+    
+    .form-field input:focus ~ label,
+    .form-field input:valid ~ label,
+    .form-field textarea:focus ~ label,
+    .form-field textarea:valid ~ label {
+        top: -1.2rem;
+        font-size: 0.85rem;
+        color: var(--navy-primary);
+    }
+    
+    .form-field .underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--navy-primary);
+        transition: var(--transition);
+    }
+    
+    .form-field input:focus ~ .underline,
+    .form-field textarea:focus ~ .underline {
+        width: 100%;
+    }
+    
+    .send-btn {
+        background: var(--navy-deep);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        width: 100%;
+        cursor: pointer;
+        transition: var(--transition);
+        font-size: 1rem;
+    }
+    
+    .send-btn:hover {
+        background: var(--navy-primary);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* Personnes clés */
+    .key-contacts {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .key-contacts h3 {
+        color: var(--navy-deep);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .contacts-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .contact-card {
+        background: var(--bg-light);
+        border-radius: var(--radius-md);
+        padding: 1.2rem;
+        border-left: 4px solid;
+        transition: var(--transition);
+    }
+    
+    .contact-card:hover {
+        transform: translateX(5px);
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .contact-card.academic { border-left-color: #4a90e2; }
+    .contact-card.financial { border-left-color: #27ae60; }
+    .contact-card.dean { border-left-color: #e67e22; }
+    .contact-card.tic { border-left-color: #9b59b6; }
+
+    .contact-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+        flex-wrap: wrap;
+    }
+    
+    .contact-tag {
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        color: white;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+    
+    .contact-tag.academic { background: #4a90e2; }
+    .contact-tag.financial { background: #27ae60; }
+    .contact-tag.dean { background: #e67e22; }
+    .contact-tag.tic { background: #9b59b6; }
+
+    .contact-title {
+        font-weight: 600;
+        color: var(--navy-deep);
+    }
+    
+    .contact-details {
+        list-style: none;
+        margin: 0.8rem 0;
+    }
+    
+    .contact-details li {
+        margin-bottom: 0.4rem;
+        color: #555;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .contact-details i {
+        margin-right: 0.5rem;
+        color: var(--navy-primary);
+        width: 1.2rem;
+    }
+    
+    .contact-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(74, 144, 226, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        color: var(--navy-primary);
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: var(--transition);
+        border: 1px solid transparent;
+        margin-top: 0.5rem;
+    }
+    
+    .contact-email:hover {
+        background: rgba(74, 144, 226, 0.2);
+        border-color: var(--navy-primary);
+        transform: scale(1.02);
+    }
+    
+    .contact-email i {
+        color: var(--navy-primary);
+        margin-right: 0;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+        background: var(--navy-deep);
+        color: #ddd;
+        padding: 2rem 1.5rem 1rem;
+        margin-top: 2rem;
+        width: 100%;
+    }
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-heading {
+        color: var(--navy-pale);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .footer-links a {
+        display: block;
+        color: #ddd;
+        margin-bottom: 0.5rem;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+    
+    .footer-links a:hover { 
+        color: white; 
+        padding-left: 5px;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1rem;
+        border-top: 1px solid var(--navy-medium);
+        text-align: center;
+        font-size: 0.9rem;
+        color: #aaa;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /* ====== CHAT WIDGET ====== */
+    .chat-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+    
+    .chat-button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--navy-primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+        border: none;
+    }
+    
+    .chat-button:hover {
+        background: var(--navy-deep);
+        transform: scale(1.1);
+    }
+    
+    .chat-box {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 300px;
+        height: 400px;
+        background: white;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .chat-box.open { 
+        display: flex; 
+    }
+    
+    .chat-header {
+        background: var(--navy-primary);
+        color: white;
+        padding: 1rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .chat-header button {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    
+    .chat-messages {
+        flex: 1;
+        padding: 1rem;
+        overflow-y: auto;
+        background: #f5f5f5;
+    }
+    
+    .message {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 18px;
+        max-width: 80%;
+        word-wrap: break-word;
+    }
+    
+    .message.bot {
+        background: white;
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .message.user {
+        background: var(--navy-primary);
+        color: white;
+        margin-left: auto;
+        border-bottom-right-radius: 4px;
+    }
+    
+    .chat-input-area {
+        display: flex;
+        padding: 0.5rem;
+        background: white;
+        border-top: 1px solid #ddd;
+    }
+    
+    .chat-input-area input {
+        flex: 1;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        margin-right: 0.5rem;
+        outline: none;
+    }
+    
+    .chat-input-area button {
+        background: var(--navy-primary);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+    }
+    
+    .chat-input-area button:hover {
+        background: var(--navy-deep);
+    }
+
+    /* ====== CONTENUS DYNAMIQUES ====== */
+    .content-container {
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    .content-container.active {
+        display: block;
+    }
+    
+    @keyframes fadeIn {
+        from { 
+            opacity: 0; 
+            transform: translateY(20px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    /* ====== LANGUAGE SELECTOR ====== */
+    .language-selector {
+        display: flex;
+        gap: 0.5rem;
+        margin-left: 1rem;
+    }
+    
+    .lang-btn {
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: var(--transition);
+    }
+    
+    .lang-btn:hover {
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .lang-btn.active {
+        background: white;
+        color: var(--navy-deep);
+    }
+    
+    /* Classes pour le contenu multilingue */
+    [data-lang="fr"] {
+        display: inline;
+    }
+    
+    [data-lang="en"] {
+        display: none;
+    }
+    
+    html[lang="en"] [data-lang="fr"] {
+        display: none;
+    }
+    
+    html[lang="en"] [data-lang="en"] {
+        display: inline;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 992px) {
+        .footer-content { 
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .hero-inner { 
+            grid-template-columns: 1fr; 
+        }
+        
+        .paths-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .contact-grid { 
+            grid-template-columns: 1fr; 
+        }
+        
+        .nav-links { 
+            display: none; 
+        }
+        
+        .nav-toggle { 
+            display: block; 
+        }
+        
+        .hero-photo-grid {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .hero-title { 
+            font-size: 1.8rem; 
+        }
+        
+        .page-title { 
+            font-size: 1.8rem; 
+        }
+        
+        .contact-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .section-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .footer-content { 
+            grid-template-columns: 1fr; 
+        }
+        
+        .paths-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .nav-title-group span:first-child { 
+            display: none; 
+        }
+        
+        .logo-box { 
+            width: 50px; 
+            height: 50px; 
+        }
+        
+        .hero {
+            padding: 2rem 1rem;
+        }
+        
+        .section {
+            padding: 1.5rem 1rem;
+        }
+        
+        .disciplines-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .chat-box {
+            width: 280px;
+            right: 0;
+        }
+        
+        .hero-ctas button {
+            width: 100%;
+        }
+        
+        .guide-steps {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (max-width: 380px) {
+        .hero-title { 
+            font-size: 1.5rem; 
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+        <div class="nav-bar">
+            <div class="nav-left">
+                <div class="logo-box">
+                    <img src="logo_famako_original.jpg" alt="Logo FaMaKo" onerror="this.src='https://via.placeholder.com/65x65/1a2b4c/ffffff?text=FMK'">
+                </div>
+                <div class="nav-title-group">
+                    <span data-lang="fr">Faculté Maïngo Ködörö</span>
+                    <span data-lang="en">Maïngo Ködörö Faculty</span>
+                    <span data-lang="fr">Bangui, RCA</span>
+                    <span data-lang="en">Bangui, CAR</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#" data-target="accueil" class="active"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+                <a href="#" data-target="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
+                <a href="#" data-target="disciplines"><span data-lang="fr">Cours</span><span data-lang="en">Courses</span></a>
+                <a href="#" data-target="reglement"><span data-lang="fr">Règlement</span><span data-lang="en">Rules</span></a>
+                <a href="#" data-target="frais"><span data-lang="fr">Frais</span><span data-lang="en">Fees</span></a>
+                <a href="#" data-target="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+            </nav>
+            <div class="language-selector">
+                <button class="lang-btn active" id="langFr">FR</button>
+                <button class="lang-btn" id="langEn">EN</button>
+            </div>
+            <button class="nav-toggle" aria-label="Menu">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#" data-target="accueil"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+            <a href="#" data-target="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
+            <a href="#" data-target="disciplines"><span data-lang="fr">Cours</span><span data-lang="en">Courses</span></a>
+            <a href="#" data-target="reglement"><span data-lang="fr">Règlement</span><span data-lang="en">Rules</span></a>
+            <a href="#" data-target="frais"><span data-lang="fr">Frais</span><span data-lang="en">Fees</span></a>
+            <a href="#" data-target="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+        <!-- ACCUEIL -->
+        <div class="content-container active" id="accueil-content">
+            <div class="hero">
+                <div class="hero-inner">
+                    <div>
+                        <div class="hero-kicker" data-lang="fr">Inscriptions Doctorat 2026 Ouvertes</div><br>
+                        <div class="hero-kicker" data-lang="en">PhD Applications 2026 Open</div><br> 
+                        
+                        <h1 class="hero-title" data-lang="fr">Bienvenue à la Faculté Maïngo Ködörö d'inspiration Baha'ie.</h1><br>
+                        <h1 class="hero-title" data-lang="en">Welcome to Maïngo Ködörö Faculty, Baha'i inspired.</h1><br>
+                        
+                        <p class="hero-subtitle" data-lang="fr">
+                            Plateforme officielle de formation et de recherche pédagogique en RCA. Formons ensemble les leaders éducatifs de demain. Accès au doctorat après validation de Diplome Superieur de Preparation à la Recherche(DSPR).
+                        </p>
+                        <p class="hero-subtitle" data-lang="en">
+                            Official platform for educational training and research in CAR. Let's train tomorrow's educational leaders together. Access to PhD program after validation of the Higher Diploma in Research Preparation (DSPR).
+                        </p><br>
+                        
+                        <div class="hero-ctas">
+                            <button class="btn btn-primary" onclick="document.querySelector('[data-target=contact]').click()"><span data-lang="fr">S'inscrire</span><span data-lang="en">Register</span></button>
+                            <button class="btn btn-outline" onclick="document.querySelector('[data-target=presentation]').click()"><span data-lang="fr">En savoir plus</span><span data-lang="en">Learn more</span></button>
+                            <button class="btn btn-outline" onclick="document.querySelector('[data-target=disciplines]').click()"><span data-lang="fr">Nos programmes</span><span data-lang="en">Our programs</span></button>
+                        </div>
+                        
+                        <p class="hero-meta">
+                            <i class="bi bi-award-fill"></i> <span data-lang="fr">DSPR requis • 13 disciplines • Virement bancaire</span><span data-lang="en">DSPR required • 13 disciplines • Bank transfer</span>
+                        </p>
+                    </div>
+                    <div class="hero-photo-grid">
+                        <div class="hero-photo">
+                            <img class="hero-img" src="Students.jpg" alt="Students" onerror="this.src='https://via.placeholder.com/200x150/1a2b4c/ffffff?text=Students'">
+                            <span data-lang="fr">Étudiants</span><span data-lang="en">Students</span>
+                        </div>
+                        <div class="hero-photo">
+                            <img class="hero-img" src="Enseignants_pour_Ecole_Communautaire.jpg" alt="Community School" onerror="this.src='https://via.placeholder.com/200x150/2c3e6e/ffffff?text=School'">
+                            <span data-lang="fr">École communataire</span><span data-lang="en">Community School</span>
+                        </div>
+                        <div class="hero-photo">
+                            <img class="hero-img" src="doyen_picture.jpg" alt="Dean" onerror="this.src='https://via.placeholder.com/200x150/4a5f8c/ffffff?text=Dean'">
+                            <span data-lang="fr">Doyen</span><span data-lang="en">Dean</span>
+                        </div>
+                        <div class="hero-photo">
+                            <img class="hero-img" src="Enseignants.jpg" alt="Temple" onerror="this.src='https://via.placeholder.com/200x150/0a1a2f/ffffff?text=Temple'">
+                            <span data-lang="fr">Enseignants</span><span data-lang="en">Teachers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="paths">
+                    <div class="section-header">
+                        <h2 class="section-title" data-lang="fr">Votre parcours vers le doctorat</h2>
+                        <h2 class="section-title" data-lang="en">Your path to PhD</h2>
+                        <p class="section-subtitle" data-lang="fr">Le DSPR est obligatoire avant d'accéder au cycle doctoral.</p>
+                        <p class="section-subtitle" data-lang="en">DSPR is mandatory before PhD program.</p>
+                    </div>
+                    <div class="paths-grid">
+                        <article class="path-card">
+                            <div class="path-label" data-lang="fr">Étape 1</div>
+                            <div class="path-label" data-lang="en">Step 1</div>
+                            <div class="path-title" data-lang="fr">Inscription DSPR</div>
+                            <div class="path-title" data-lang="en">DSPR Registration</div>
+                            <p class="path-desc" data-lang="fr">Inscription au programme de (DSPR).</p>
+                            <p class="path-desc" data-lang="en">Registration for DSPR program.</p>
+                            <a href="#" data-target="reglement" class="path-link"><span data-lang="fr">S'inscrire →</span><span data-lang="en">Register →</span></a>
+                        </article>
+                        <article class="path-card">
+                            <div class="path-label" data-lang="fr">Étape 2</div>
+                            <div class="path-label" data-lang="en">Step 2</div>
+                            <div class="path-title" data-lang="fr">Validation Année</div>
+                            <div class="path-title" data-lang="en">Year Validation</div>
+                            <p class="path-desc" data-lang="fr">Validation des cours et examen de fin d'année.</p>
+                            <p class="path-desc" data-lang="en">Course validation and final exam.</p>
+                            <a href="#" data-target="disciplines" class="path-link"><span data-lang="fr">Voir les cours →</span><span data-lang="en">See courses →</span></a>
+                        </article>
+                        <article class="path-card">
+                            <div class="path-label" data-lang="fr">Étape 3</div>
+                            <div class="path-label" data-lang="en">Step 3</div>
+                            <div class="path-title" data-lang="fr">Accès Doctorat</div>
+                            <div class="path-title" data-lang="en">PhD Access</div>
+                            <p class="path-desc" data-lang="fr">Accès au cycle doctoral après réussite.</p>
+                            <p class="path-desc" data-lang="en">Access to PhD after success.</p>
+                            <a href="#" data-target="presentation" class="path-link"><span data-lang="fr">En savoir plus →</span><span data-lang="en">Learn more →</span></a>
+                        </article>
+                        <article class="path-card">
+                            <div class="path-label" data-lang="fr">13 spécialités</div>
+                            <div class="path-label" data-lang="en">13 specialties</div>
+                            <div class="path-title" data-lang="fr">Disciplines variées</div>
+                            <div class="path-title" data-lang="en">Various disciplines</div>
+                            <p class="path-desc" data-lang="fr">Philosophie, psychologie, pédagogie...</p>
+                            <p class="path-desc" data-lang="en">Philosophy, psychology, pedagogy...</p>
+                            <a href="#" data-target="disciplines" class="path-link"><span data-lang="fr">Découvrir →</span><span data-lang="en">Discover →</span></a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRÉSENTATION -->
+        <div class="content-container" id="presentation-content">
+            <div class="section">
+                <h2 class="page-title" data-lang="fr">Présentation de la Faculté</h2>
+                <h2 class="page-title" data-lang="en">Faculty Presentation</h2>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h3 class="text-primary"><i class="bi bi-building-check me-2"></i><span data-lang="fr">Centre d'Excellence</span><span data-lang="en">Center of Excellence</span></h3>
+                                <p data-lang="fr">La Faculté Maïngo Ködörö, créée en partenariat avec l'Université de Bangui, est un centre d'excellence pour la formation des cadres spécialisés en Sciences de l'Éducation. Notre programme comprend une année de Diplôme Supérieur de Préparation à la recherche (DSPR), faisant office de master probatoire pour l'inscription au Doctorat.</p>
+                                <p data-lang="en">Maïngo Ködörö Faculty, created in partnership with the University of Bangui, is a center of excellence for training specialized executives in Educational Sciences. Our program includes one year of Higher Diploma in Research Preparation (DSPR), serving as a preparatory master for PhD registration.</p>
+                                <div class="alert alert-warning mt-4">
+                                    <i class="bi bi-exclamation-diamond-fill me-2"></i>
+                                    <strong><span data-lang="fr">Important :</span><span data-lang="en">Important:</span></strong>
+                                    <span data-lang="fr">Tous les étudiants doivent suivre et valider l'année de DSPR avant d'accéder au cycle Doctorat.</span>
+                                    <span data-lang="en">All students must complete and validate the DSPR year before accessing the PhD program.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="card border-0 text-white h-100" style="background: var(--sky-deep);">
+                            <div class="card-body p-4">
+                                <h4><i class="bi bi-info-circle-fill me-2"></i><span data-lang="fr">Informations Clés</span><span data-lang="en">Key Information</span></h4>
+                                <div class="d-flex flex-column gap-3">
+                                    <div><i class="bi bi-award-fill fs-4 me-2" style="color: var(--sky-pale);"></i> <strong><span data-lang="fr">Diplôme Doctorat</span><span data-lang="en">PhD Degree</span></strong><br><small>DSPR + Doctorat</small></div>
+                                    <div><i class="bi bi-calendar-check-fill fs-4 me-2" style="color: var(--sky-pale);"></i> <strong><span data-lang="fr">Durée 4-5 ans</span><span data-lang="en">Duration 4-5 years</span></strong><br><small><span data-lang="fr">1 ou 2 ans Masters + 3 ans Doctorat/PhD</span><span data-lang="en">1 or 2 years Masters + 3 years PhD</span></small></div>
+                                    <div><i class="bi bi-people-fill fs-4 me-2" style="color: var(--sky-pale);"></i> <strong>13 <span data-lang="fr">Spécialités</span><span data-lang="en">Specialties</span></strong><br><small><span data-lang="fr">Domaines variés</span><span data-lang="en">Various fields</span></small></div>
+                                    <div><i class="bi bi-bank2 fs-4 me-2" style="color: var(--sky-pale);"></i> <strong><span data-lang="fr">Paiement</span><span data-lang="en">Payment</span></strong><br><small><span data-lang="fr">Virement bancaire uniquement</span><span data-lang="en">Bank transfer only</span></small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISCIPLINES -->
+        <div class="content-container" id="disciplines-content">
+            <div class="section">
+                <h2 class="page-title" data-lang="fr">Nos 13 Disciplines de Formation</h2>
+                <h2 class="page-title" data-lang="en">Our 13 Training Disciplines</h2>
+                <p class="lead mb-4" data-lang="fr">Découvrez nos spécialités en Sciences de l'Éducation (DSPR et Doctorat)</p>
+                <p class="lead mb-4" data-lang="en">Discover our specialties in Educational Sciences (DSPR and PhD)</p>
+                <div class="disciplines-grid">
+                    <div class="disc-card"><i class="bi bi-lightbulb-fill"></i><span>1. <span data-lang="fr">Philosophie de l'éducation</span><span data-lang="en">Philosophy of Education</span></span></div>
+                    <div class="disc-card"><i class="bi bi-clock-history"></i><span>2. <span data-lang="fr">Histoire de l'éducation</span><span data-lang="en">History of Education</span></span></div>
+                    <div class="disc-card"><i class="bi bi-globe-americas"></i><span>3. <span data-lang="fr">Anthropologie de l'éducation</span><span data-lang="en">Anthropology of Education</span></span></div>
+                    <div class="disc-card"><i class="bi bi-compass-fill"></i><span>4. <span data-lang="fr">Éducation comparée</span><span data-lang="en">Comparative Education</span></span></div>
+                    <div class="disc-card"><i class="bi bi-psychology"></i><span>5. <span data-lang="fr">Psychologie de l'éducation</span><span data-lang="en">Educational Psychology</span></span></div>
+                    <div class="disc-card"><i class="bi bi-mortarboard-fill"></i><span>6. <span data-lang="fr">Pédagogie</span><span data-lang="en">Pedagogy</span></span></div>
+                  <!-- Version bilingue complète pour la sous-section Didactique -->
+<div class="disc-card" style="flex-direction: column; align-items: flex-start; gap: 8px; padding: 15px;">
+    <div style="display: flex; align-items: center; gap: 15px; width: 100%;">
+        <i class="bi bi-journal-bookmark-fill"></i>
+        <span style="font-weight: 600;">7. <span data-lang="fr">Didactique des disciplines</span><span data-lang="en">Didactics of Disciplines</span></span>
+    </div>
+    <div style="margin-left: 55px; font-size: 0.9rem; color: var(--navy-primary); line-height: 1.5;">
+        <div data-lang="fr">.a Littérature et arts</div>
+        <div data-lang="en">.a Literature and Arts</div>
+        <div data-lang="fr">.b Sciences et technologie</div>
+        <div data-lang="en">.b Science and Technology</div>
+        <div data-lang="fr">.c Sciences humaines et sociales</div>
+        <div data-lang="en">.c Humanities and Social Sciences</div>
+    </div>
+</div>
+                    <div class="disc-card"><i class="bi bi-clipboard-check-fill"></i><span>8. <span data-lang="fr">Évaluation de l'éducation</span><span data-lang="en">Educational Evaluation</span></span></div>
+                    <div class="disc-card"><i class="bi bi-people-fill"></i><span>9. <span data-lang="fr">Sociologie de l'éducation</span><span data-lang="en">Sociology of Education</span></span></div>
+                    <div class="disc-card"><i class="bi bi-graph-up-arrow"></i><span>10. <span data-lang="fr">Économie de l'éducation</span><span data-lang="en">Economics of Education</span></span></div>
+                    <div class="disc-card"><i class="bi bi-kanban-fill"></i><span>11. <span data-lang="fr">Planification de l'éducation</span><span data-lang="en">Educational Planning</span></span></div>
+                    <div class="disc-card"><i class="bi bi-person-badge-fill"></i><span>12. <span data-lang="fr">Démographie scolaire</span><span data-lang="en">School Demography</span></span></div>
+                    <div class="disc-card"><i class="bi bi-shield-check"></i><span>13. <span data-lang="fr">Administration de l'éducation</span><span data-lang="en">Educational Administration</span></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RÈGLEMENT -->
+        <div class="content-container" id="reglement-content">
+            <div class="section">
+                <h2 class="page-title" data-lang="fr">Règlement & Inscription</h2>
+                <h2 class="page-title" data-lang="en">Regulations & Registration</h2>
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4 class="text-primary"><i class="bi bi-info-circle-fill me-2"></i><span data-lang="fr">Procédure d'Inscription</span><span data-lang="en">Registration Procedure</span></h4>
+                                <p data-lang="fr">Téléchargez les documents nécessaires pour votre dossier d'inscription au DSPR. Après la lecture du règlement intérieur, vous pouvez nous contacter.</p>
+                                <p data-lang="en">Download the required documents for your DSPR registration file. After reading the internal regulations, you can contact us.</p>
+                                <div class="alert alert-primary mt-3">
+                                    <i class="bi bi-mortarboard-fill me-2"></i>
+                                    <strong><span data-lang="fr">Note importante :</span><span data-lang="en">Important note:</span></strong>
+                                    <span data-lang="fr">L'inscription se fait au programme de DSPR. L'accès au cycle doctoral n'est autorisé qu'après validation complète de cette année préparatoire.</span>
+                                    <span data-lang="en">Registration is for the DSPR program. Access to the PhD is only authorized after complete validation of this preparatory year.</span>
+                                </div>
+                                <div class="row g-3 mt-3">
+                                    <div class="col-md-6">
+                                        <a href="#" class="btn btn-outline-primary w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                                            <i class="bi bi-file-earmark-word-fill fs-4"></i>
+                                            <div class="text-start"><div class="fw-bold"><span data-lang="fr">Règlement (Word)</span><span data-lang="en">Regulations (Word)</span></div><small class="text-muted">.docx</small></div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#" class="btn btn-outline-danger w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                                            <i class="bi bi-file-earmark-pdf-fill fs-4"></i>
+                                            <div class="text-start"><div class="fw-bold"><span data-lang="fr">Règlement (PDF)</span><span data-lang="en">Regulations (PDF)</span></div><small class="text-muted">.pdf</small></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfavYsEqVBxJVv--EogfikkkqjsGGjmjdzJR5YWsv6OmEGn9A/viewform?usp=preview" class="btn btn-success w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+                                        <i class="bi bi-pencil-square fs-4"></i><span class="fw-bold"><span data-lang="fr">Formulaire d'inscription</span><span data-lang="en">Registration Form</span></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mt-4 mt-lg-0">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary"><i class="bi bi-clipboard-checklist me-2"></i><span data-lang="fr">Pièces à fournir</span><span data-lang="en">Required Documents</span></h5>
+                                        <ul class="list-unstyled">
+                                            <li><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang="fr">Diplôme de Licence/BAC+3</span><span data-lang="en">Bachelor's Degree</span></li>
+                                            <li><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang="fr">Relevés de notes</span><span data-lang="en">Transcripts</span></li>
+                                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>CV <span data-lang="fr">détaillé</span><span data-lang="en">detailed</span></li>
+                                            <li><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang="fr">Lettre de motivation</span><span data-lang="en">Cover Letter</span></li>
+                                            <li><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang="fr">Photos d'identité</span><span data-lang="en">ID Photos</span></li>
+                                            <li><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang="fr">Copie carte nationale</span><span data-lang="en">Copy of ID Card</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FRAIS -->
+        <div class="content-container" id="frais-content">
+            <div class="section">
+                <h2 class="page-title" data-lang="fr">Frais de Formation à la FaMaKo</h2>
+                <h2 class="page-title" data-lang="en">Training Fees at FaMaKo</h2>
+                <div class="alert alert-info"><i class="bi bi-currency-exchange me-2"></i> <span data-lang="fr">Méthode de paiement : Virement bancaire uniquement pour tous les étudiants.</span><span data-lang="en">Payment method: Bank transfer only for all students.</span></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="fee-card">
+                            <h3><span data-lang="fr">Frais de Formation Annuelle</span><span data-lang="en">Annual Training Fees</span></h3>
+                            <div class="mb-4">
+                                <h5 class="text-primary"><i class="bi bi-clipboard-check me-2"></i><span data-lang="fr">Frais d'inscription annuelle</span><span data-lang="en">Annual Registration Fees</span></h5>
+                                <div class="fee-price"><i class="bi bi-cash-coin"></i>45,000 FCFA</div>
+                                <div class="fee-sub">(69 euros) — <span data-lang="fr">Taux fixe : 1 euro = 655,96 FCFA</span><span data-lang="en">Fixed rate: 1 euro = 655.96 FCFA</span></div>
+                                <div><i class="bi bi-check-circle-fill text-success me-2"></i><span data-lang="fr">Payable en une seule tranche à l'inscription</span><span data-lang="en">Payable in one installment upon registration</span></div>
+                            </div>
+                            <hr>
+                            <div class="mt-4">
+                                <h5 class="text-primary"><i class="bi bi-mortarboard me-2"></i><span data-lang="fr">Frais de scolarité annuelle</span><span data-lang="en">Annual Tuition Fees</span></h5>
+                                <div class="fee-price"><i class="bi bi-currency-exchange"></i>540,000 FCFA</div>
+                                <div class="fee-sub">(823 euros) — <span data-lang="fr">Taux fixe : 1 euro = 655,96 FCFA</span><span data-lang="en">Fixed rate: 1 euro = 655.96 FCFA</span></div>
+                                <div><i class="bi bi-shield-check text-primary me-2"></i><span data-lang="fr">Payable en 1 ou 2 tranches au début de chaque semestre</span><span data-lang="en">Payable in 1 or 2 installments at the beginning of each semester</span></div>
+                            </div>
+                            <div class="alert alert-warning mt-4">
+                                <i class="bi bi-info-circle-fill me-2"></i>
+                                <strong><span data-lang="fr">Ces frais s'appliquent à :</span><span data-lang="en">These fees apply to:</span></strong>
+                                <span data-lang="fr"> DSPR, Cycle doctoral, Tous les programmes.</span>
+                                <span data-lang="en"> DSPR, PhD, All programs.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-guide mt-5">
+                    <h4 class="text-primary"><i class="bi bi-journal-text me-2"></i><span data-lang="fr">Procédure de Paiement</span><span data-lang="en">Payment Procedure</span></h4>
+                    <div class="guide-steps">
+                        <div class="guide-step"><div class="step-number">1</div><div class="step-content"><h5><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></h5><p><span data-lang="fr">Contactez-nous via le formulaire</span><span data-lang="en">Contact us via the form</span></p></div></div>
+                        <div class="guide-step"><div class="step-number">2</div><div class="step-content"><h5><span data-lang="fr">Coordonnées</span><span data-lang="en">Bank Details</span></h5><p><span data-lang="fr">Obtenez les infos bancaires</span><span data-lang="en">Get bank information</span></p></div></div>
+                        <div class="guide-step"><div class="step-number">3</div><div class="step-content"><h5><span data-lang="fr">Virement</span><span data-lang="en">Transfer</span></h5><p><span data-lang="fr">Effectuez le virement bancaire</span><span data-lang="en">Make the bank transfer</span></p></div></div>
+                        <div class="guide-step"><div class="step-number">4</div><div class="step-content"><h5><span data-lang="fr">Confirmation</span><span data-lang="en">Confirmation</span></h5><p><span data-lang="fr">Envoyez le reçu de virement</span><span data-lang="en">Send the transfer receipt</span></p></div></div>
+                    </div>
+                    <div class="alert alert-warning mt-4">
+                        <i class="bi bi-exclamation-diamond-fill me-2"></i>
+                        <strong><span data-lang="fr">Instructions importantes :</span><span data-lang="en">Important instructions:</span></strong>
+                        <span data-lang="fr"> 1. Toujours indiquer votre nom complet comme référence. 2. Conserver le reçu. 3. Envoyer une copie du reçu.</span>
+                        <span data-lang="en"> 1. Always indicate your full name as reference. 2. Keep the receipt. 3. Send a copy of the receipt.</span>
+                    </div>
+                </div>
+                <div class="cta-buttons mt-5">
+                    <a href="#" data-target="contact" class="btn-cta primary"><i class="bi bi-envelope-fill"></i> <span data-lang="fr">Demander un devis</span><span data-lang="en">Request a quote</span></a>
+                    <a href="#" data-target="reglement" class="btn-cta secondary"><i class="bi bi-file-text-fill"></i> <span data-lang="fr">Règlement</span><span data-lang="en">Regulations</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT avec Personnes clés -->
+        <div class="content-container" id="contact-content">
+            <div class="section">
+                <h2 class="page-title" data-lang="fr">Contact & Personnes clés</h2>
+                <h2 class="page-title" data-lang="en">Contact & Key People</h2>
+                
+                <div class="contact-grid">
+                    <!-- Formulaire de contact -->
+                    <div class="contact-form">
+                        <h3><i class="bi bi-envelope-paper me-2"></i><span data-lang="fr">Envoyez-nous un message</span><span data-lang="en">Send us a message</span></h3>
+                        <form id="contactForm">
+                            <div class="form-field">
+                                <input type="text" id="name" required>
+                                <label for="name"><span data-lang="fr">Nom complet</span><span data-lang="en">Full name</span></label>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="email" required>
+                                <label for="email"><span data-lang="fr">Adresse email</span><span data-lang="en">Email address</span></label>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" id="subject" required>
+                                <label for="subject"><span data-lang="fr">Objet</span><span data-lang="en">Subject</span></label>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="form-field">
+                                <textarea id="message" required></textarea>
+                                <label for="message"><span data-lang="fr">Votre message</span><span data-lang="en">Your message</span></label>
+                                <div class="underline"></div>
+                            </div>
+                            <button type="submit" class="send-btn">
+                                <span><span data-lang="fr">Envoyer le message</span><span data-lang="en">Send message</span></span>
+                                <i class="bi bi-send ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Personnes clés -->
+                    <div class="key-contacts">
+                        <h3><i class="bi bi-people-fill"></i> <span data-lang="fr">Personnes clés à contacter</span><span data-lang="en">Key people to contact</span></h3>
+                        
+                        <div class="contacts-list">
+                            <!-- DAC - Affaires académiques -->
+                            <div class="contact-card academic">
+                                <div class="contact-header">
+                                    <span class="contact-tag academic">DAA</span>
+                                    <span class="contact-title"><span data-lang="fr">Affaires académiques</span><span data-lang="en">Academic Affairs</span></span>
+                                </div>
+                                <ul class="contact-details">
+                                    <li><i class="bi bi-folder"></i> <span data-lang="fr">Dossier d'inscription</span><span data-lang="en">Registration file</span></li>
+                                    <li><i class="bi bi-calendar"></i> <span data-lang="fr">Cours, calendrier, programmes</span><span data-lang="en">Courses, schedule, programs</span></li>
+                                </ul>
+                                <div class="contact-email" onclick="window.location.href='mailto:dac@famako.edu'">
+                                    <i class="bi bi-envelope-fill"></i> dac@famako.edu
+                                </div>
+                            </div>
+
+                            <!-- DAF - Affaires financières -->
+                            <div class="contact-card financial">
+                                <div class="contact-header">
+                                    <span class="contact-tag financial">DAF</span>
+                                    <span class="contact-title"><span data-lang="fr">Affaires financières</span><span data-lang="en">Financial Affairs</span></span>
+                                </div>
+                                <ul class="contact-details">
+                                    <li><i class="bi bi-cash"></i> <span data-lang="fr">Frais d'inscription</span><span data-lang="en">Registration fees</span></li>
+                                    <li><i class="bi bi-credit-card"></i> <span data-lang="fr">Frais scolarité, types de paiement</span><span data-lang="en">Tuition fees, payment methods</span></li>
+                                </ul>
+                                <div class="contact-email" onclick="window.location.href='mailto:Matekonysosthene@gmail.com'">
+                                    <i class="bi bi-envelope-fill"></i> Matekonysosthene@gmail.com
+                                </div>
+                            </div>
+
+                            <!-- Secrétaire Principale - Décanat -->
+                            <div class="contact-card dean">
+                                <div class="contact-header">
+                                    <span class="contact-tag dean"><span data-lang="fr">Secrétaire Principale</span><span data-lang="en">Principal Secretary</span></span>
+                                    <span class="contact-title"><span data-lang="fr">Décanat</span><span data-lang="en">Dean's Office</span></span>
+                                </div>
+                                <ul class="contact-details">
+                                    <li><i class="bi bi-person-badge"></i> <span data-lang="fr">Référence au Doyen</span><span data-lang="en">Reference to Dean</span></li>
+                                    <li><i class="bi bi-question-circle"></i> <span data-lang="fr">Questions générales sur FaMaKo</span><span data-lang="en">General questions about FaMaKo</span></li>
+                                </ul>
+                                <div class="contact-email" onclick="window.location.href='mailto:tinongaikomos@gmail.com'">
+                                    <i class="bi bi-envelope-fill"></i> tinongaikomos@gmail.com
+                                </div>
+                            </div>
+
+                            <!-- Responsable TIC -->
+                            <div class="contact-card tic">
+                                <div class="contact-header">
+                                    <span class="contact-tag tic">TIC</span>
+                                    <span class="contact-title"><span data-lang="fr">Responsable TIC</span><span data-lang="en">ICT Manager</span></span>
+                                </div>
+                                <ul class="contact-details">
+                                    <li><i class="bi bi-globe"></i> <span data-lang="fr">Site web & plateformes</span><span data-lang="en">Website & platforms</span></li>
+                                    <li><i class="bi bi-telephone"></i> <span data-lang="fr">Support technique</span><span data-lang="en">Technical support</span></li>
+                                </ul>
+                                <div class="contact-email" onclick="window.location.href='mailto:francklindefeibona@gmail.com'">
+                                    <i class="bi bi-envelope-fill"></i> francklindefeibona@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-heading"><span data-lang="fr">Faculté Maïngo Ködörö</span><span data-lang="en">Maïngo Ködörö Faculty</span></div>
+                <p>
+                    Quartier LAKOUANGA Fleuve-B<br>
+                    2eme Arrondissement de Bangui<br>
+                    <span data-lang="fr">République Centrafricaine</span><span data-lang="en">Central African Republic</span>
+                </p>
+            </div>
+            
+            <div>
+                <div class="footer-heading"><span data-lang="fr">Liens rapides</span><span data-lang="en">Quick Links</span></div>
+                <div class="footer-links">
+                    <a href="#" data-target="accueil"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+                    <a href="#" data-target="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
+                    <a href="#" data-target="disciplines"><span data-lang="fr">Disciplines</span><span data-lang="en">Disciplines</span></a>
+                    <a href="#" data-target="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+                </div>
+            </div>
+            
+            <div>
+                <div class="footer-heading"><span data-lang="fr">Horaires</span><span data-lang="en">Hours</span></div>
+                <p>
+                    <span data-lang="fr">Lundi - Vendredi : 8h - 17h</span><span data-lang="en">Monday - Friday: 8am - 5pm</span><br>
+                    <span data-lang="fr">Samedi : 8h - 12h</span><span data-lang="en">Saturday: 8am - 12pm</span><br>
+                    <span data-lang="fr">Dimanche : Fermé</span><span data-lang="en">Sunday: Closed</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <span>© 2026 Faculté Maïngo Ködörö - <span data-lang="fr">Tous droits réservés.</span><span data-lang="en">All rights reserved.</span></span>
+            <span><span data-lang="fr">Développé par</span><span data-lang="en">Developed by</span> FaMaKo</span>
+        </div>
+    </footer>
+
+    <!-- ==================== CHAT WIDGET ==================== -->
+    <div class="chat-widget">
+        <button class="chat-button" id="chatButton" aria-label="Ouvrir le chat">
+            <i class="bi bi-chat-dots"></i>
+        </button>
+        
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <span>Assistant FaMaKo</span>
+                <button id="closeChat"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot"><span data-lang="fr">Bonjour ! Je suis l'assistant virtuel de FaMaKo. Comment puis-je vous aider ?</span><span data-lang="en">Hello! I am the FaMaKo virtual assistant. How can I help you?</span></div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Votre message...">
+                <button id="sendChat" aria-label="Envoyer">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ===== VARIABLES GLOBALES =====
+            const navLinks = document.querySelectorAll('[data-target]');
+            const sections = document.querySelectorAll('.content-container');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const navToggle = document.querySelector('.nav-toggle');
+            const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
+            
+            // ===== GESTION DE LA LANGUE CORRIGÉE =====
+            const langFr = document.getElementById('langFr');
+            const langEn = document.getElementById('langEn');
+            const html = document.documentElement;
+            
+            // Fonction pour changer la langue
+            function setLanguage(lang) {
+                // Mettre à jour l'attribut lang de la balise html
+                html.lang = lang;
+                
+                // Mettre à jour les classes actives des boutons
+                if (lang === 'fr') {
+                    langFr.classList.add('active');
+                    langEn.classList.remove('active');
+                } else {
+                    langEn.classList.add('active');
+                    langFr.classList.remove('active');
+                }
+                
+                // Sauvegarder la préférence
+                localStorage.setItem('famako-lang', lang);
+            }
+            
+            // Initialiser la langue
+            if (langFr && langEn) {
+                const savedLang = localStorage.getItem('famako-lang') || 'fr';
+                setLanguage(savedLang);
+                
+                langFr.addEventListener('click', function() {
+                    setLanguage('fr');
+                });
+                
+                langEn.addEventListener('click', function() {
+                    setLanguage('en');
+                });
+            }
+            
+            // ===== FONCTION POUR CHANGER DE SECTION =====
+            function showSection(targetId) {
+                // Cacher toutes les sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Afficher la section cible
+                const activeSection = document.getElementById(targetId + '-content');
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                }
+                
+                // Mettre à jour les liens actifs (desktop)
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.target === targetId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Mettre à jour les liens actifs (mobile)
+                if (mobileLinks.length > 0) {
+                    mobileLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.dataset.target === targetId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+                
+                // Fermer le menu mobile
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('show');
+                }
+                
+                // Mettre à jour l'URL
+                history.pushState(null, null, '#' + targetId);
+            }
+            
+            // ===== GESTION DES CLICS SUR LES LIENS =====
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.dataset.target;
+                    showSection(target);
+                });
+            });
+            
+            if (mobileLinks.length > 0) {
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const target = this.dataset.target;
+                        showSection(target);
+                    });
+                });
+            }
+            
+            // ===== GESTION DU MENU MOBILE =====
+            if (navToggle && mobileMenu) {
+                navToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('show');
+                });
+            }
+            
+            // ===== GESTION DU HASH DANS L'URL =====
+            function handleHash() {
+                const hash = window.location.hash.substring(1) || 'accueil';
+                showSection(hash);
+            }
+            
+            window.addEventListener('hashchange', handleHash);
+            handleHash(); // Initialisation
+            
+            // ===== GESTION DU FORMULAIRE DE CONTACT =====
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simuler l'envoi du formulaire
+                    const lang = html.lang;
+                    if (lang === 'fr') {
+                        alert('Message envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.');
+                    } else {
+                        alert('Message sent successfully! We will reply as soon as possible.');
+                    }
+                    
+                    // Réinitialiser le formulaire
+                    this.reset();
+                });
+            }
+            
+            // ===== GESTION DU CHAT WIDGET =====
+            const chatButton = document.getElementById('chatButton');
+            const chatBox = document.getElementById('chatBox');
+            const closeChat = document.getElementById('closeChat');
+            const sendChat = document.getElementById('sendChat');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+            
+            // Ouvrir/fermer le chat
+            if (chatButton && chatBox) {
+                chatButton.addEventListener('click', function() {
+                    chatBox.classList.toggle('open');
+                });
+            }
+            
+            // Fermer le chat
+            if (closeChat && chatBox) {
+                closeChat.addEventListener('click', function() {
+                    chatBox.classList.remove('open');
+                });
+            }
+            
+            // Fonction pour ajouter un message
+            function addMessage(text, sender) {
+                if (!chatMessages) return;
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', sender);
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Fonction pour envoyer un message
+            function sendMessage() {
+                if (!chatInput || !chatMessages) return;
+                const message = chatInput.value.trim();
+                if (message === '') return;
+                
+                // Afficher le message de l'utilisateur
+                addMessage(message, 'user');
+                
+                // Vider l'input
+                chatInput.value = '';
+                
+                // Simuler une réponse après un délai
+                setTimeout(function() {
+                    const lang = html.lang;
+                    const responses = {
+                        fr: [
+                            "Merci pour votre message. Un responsable vous répondra bientôt.",
+                            "Pour toute question sur les inscriptions, je vous invite à consulter la section Règlement.",
+                            "Les frais de scolarité sont de 540 000 FCFA par an.",
+                            "Vous pouvez également envoyer un email à l'un de nos contacts dans la section 'Personnes clés'.",
+                            "Je vous conseille de remplir le formulaire de contact pour plus d'informations."
+                        ],
+                        en: [
+                            "Thank you for your message. A representative will reply soon.",
+                            "For any questions about registration, please check the Regulations section.",
+                            "Tuition fees are 540,000 FCFA per year.",
+                            "You can also send an email to one of our contacts in the 'Key People' section.",
+                            "I recommend filling out the contact form for more information."
+                        ]
+                    };
+                    const randomResponse = responses[lang][Math.floor(Math.random() * responses[lang].length)];
+                    addMessage(randomResponse, 'bot');
+                }, 1000);
+            }
+            
+            // Envoyer par clic sur le bouton
+            if (sendChat) {
+                sendChat.addEventListener('click', sendMessage);
+            }
+            
+            // Envoyer par touche Entrée
+            if (chatInput) {
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+            }
+            
+            // ===== GESTION DU RÉSIZE POUR LE MENU MOBILE =====
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 900 && mobileMenu) {
+                    mobileMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
