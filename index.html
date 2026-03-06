@@ -445,6 +445,548 @@
                 font-size: 0.85rem;
             }
         }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-box">
+                    <img src="logo_famako.png" alt="Logo" onerror="this.src='https://via.placeholder.com/50x50/1a2b4c/ffffff?text=FMK'">
+                </div>
+                <div class="title-area">
+                    <span data-lang="fr">Faculté Maïngo Ködörö</span>
+                    <span data-lang="en">Maïngo Ködörö Faculty</span>
+                    <span data-lang="fr">Bangui, RCA</span>
+                    <span data-lang="en">Bangui, CAR</span>
+                </div>
+            </div>
+            
+            <!-- Menu desktop -->
+            <div class="desktop-menu">
+                <a href="#" data-page="accueil" class="active"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+                <a href="#" data-page="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
+                <a href="#" data-page="cours"><span data-lang="fr">Cours</span><span data-lang="en">Courses</span></a>
+                <a href="#" data-page="reglement"><span data-lang="fr">Règles</span><span data-lang="en">Rules</span></a>
+                <a href="#" data-page="frais"><span data-lang="fr">Frais</span><span data-lang="en">Fees</span></a>
+                <a href="#" data-page="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+            </div>
+            
+            <div class="desktop-actions">
+                <button class="lang-btn active" id="langFr">FR</button>
+                <button class="lang-btn" id="langEn">EN</button>
+                <button class="btn btn-outline" onclick="showPage('contact')">
+                    <span data-lang="fr">S'inscrire</span>
+                    <span data-lang="en">Sign In</span>
+                </button>
+                <button class="btn btn-primary" onclick="showPage('contact')">
+                    <span data-lang="fr">Connexion</span>
+                    <span data-lang="en">Sign Up</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1rem;">
+                <button class="lang-btn active" id="mobileLangFr">FR</button>
+                <button class="lang-btn" id="mobileLangEn">EN</button>
+            </div>
+            
+            <a href="#" data-page="accueil" class="active"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+            <a href="#" data-page="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
+            <a href="#" data-page="cours"><span data-lang="fr">Cours</span><span data-lang="en">Courses</span></a>
+            <a href="#" data-page="reglement"><span data-lang="fr">Règles</span><span data-lang="en">Rules</span></a>
+            <a href="#" data-page="frais"><span data-lang="fr">Frais</span><span data-lang="en">Fees</span></a>
+            <a href="#" data-page="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+            
+            <div class="mobile-actions">
+                <button class="btn btn-outline" onclick="showPage('contact')">
+                    <span data-lang="fr">S'inscrire</span>
+                    <span data-lang="en">Sign In</span>
+                </button>
+                <button class="btn btn-primary" onclick="showPage('contact')">
+                    <span data-lang="fr">Connexion</span>
+                    <span data-lang="en">Sign Up</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== PAGES ===== -->
+    <main>
+        <!-- ACCUEIL -->
+        <div class="page-content active" id="page-accueil">
+            <div class="hero">
+                <div class="hero-inner">
+                    <div class="hero-content">
+                        <div class="hero-kicker" data-lang="fr">Inscriptions Doctorat 2026 Ouvertes</div>
+                        <div class="hero-kicker" data-lang="en">PhD Applications 2026 Open</div>
+                        
+                        <h1 class="hero-title" data-lang="fr">Bienvenue à la Faculté Maïngo Ködörö</h1>
+                        <h1 class="hero-title" data-lang="en">Welcome to Maïngo Ködörö Faculty</h1>
+                        
+                        <p class="hero-subtitle" data-lang="fr">
+                            Plateforme officielle de formation et de recherche pédagogique en RCA.<br>
+                            Accès au doctorat après validation du Diplôme Supérieur de Préparation à la Recherche (DSPR).
+                        </p>
+                        <p class="hero-subtitle" data-lang="en">
+                            Official platform for educational training and research in CAR.<br>
+                            Access to PhD program after validation of the Higher Diploma in Research Preparation (DSPR).
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="showPage('contact')">
+                                <span data-lang="fr">S'inscrire</span>
+                                <span data-lang="en">Register</span>
+                            </button>
+                            <button class="btn btn-outline" onclick="showPage('presentation')">
+                                <span data-lang="fr">En savoir plus</span>
+                                <span data-lang="en">Learn more</span>
+                            </button>
+                            <button class="btn btn-outline" onclick="showPage('cours')">
+                                <span data-lang="fr">Nos programmes</span>
+                                <span data-lang="en">Our programs</span>
+                            </button>
+                        </div>
+                        
+                        <p class="hero-meta">
+                            <i class="bi bi-award-fill"></i>
+                            <span data-lang="fr">DSPR requis • 13 disciplines • Virement bancaire</span>
+                            <span data-lang="en">DSPR required • 13 disciplines • Bank transfer</span>
+                        </p>
+                    </div>
+                    
+                    <div class="hero-images">
+                        <div class="hero-image">
+                            <img src="Students.jpg" alt="Students" onerror="this.src='https://via.placeholder.com/200x150/1a2b4c/ffffff?text=Students'">
+                            <span data-lang="fr">Étudiants</span>
+                            <span data-lang="en">Students</span>
+                        </div>
+                        <div class="hero-image">
+                            <img src="School.jpg" alt="School" onerror="this.src='https://via.placeholder.com/200x150/2c3e6e/ffffff?text=School'">
+                            <span data-lang="fr">École</span>
+                            <span data-lang="en">School</span>
+                        </div>
+                        <div class="hero-image">
+                            <img src="Dean.jpg" alt="Dean" onerror="this.src='https://via.placeholder.com/200x150/4a5f8c/ffffff?text=Dean'">
+                            <span data-lang="fr">Doyen</span>
+                            <span data-lang="en">Dean</span>
+                        </div>
+                        <div class="hero-image">
+                            <img src="Teachers.jpg" alt="Teachers" onerror="this.src='https://via.placeholder.com/200x150/0a1a2f/ffffff?text=Teachers'">
+                            <span data-lang="fr">Enseignants</span>
+                            <span data-lang="en">Teachers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick paths -->
+            <div class="section">
+                <h2 class="page-title" data-lang="fr">Votre parcours vers le doctorat</h2>
+                <h2 class="page-title" data-lang="en">Your path to PhD</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                          gap: 1rem;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .logo-box {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            flex-shrink: 0;
+        }
+        
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .title-area {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-area span:first-child {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--navy-pale);
+        }
+        
+        .title-area span:last-child {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        /* Menu desktop */
+        .desktop-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .desktop-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        .desktop-menu a:hover {
+            text-decoration: underline;
+        }
+        
+        .desktop-menu a.active {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        
+        .desktop-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .lang-btn.active {
+            background: white;
+            color: var(--navy-deep);
+        }
+        
+        .btn {
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            white-space: nowrap;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+        
+        .btn-primary {
+            background: var(--navy-deep);
+            color: white;
+        }
+        
+        /* Bouton menu mobile */
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        /* Menu mobile */
+        .mobile-menu {
+            display: none;
+            background: var(--navy-deep);
+            padding: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            color: white;
+            padding: 0.75rem;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-menu a.active {
+            background: var(--navy-primary);
+            border-radius: 5px;
+        }
+        
+        .mobile-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+        
+        .mobile-actions .btn {
+            flex: 1;
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
+            color: white;
+            padding: 2rem 1rem;
+        }
+        
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .hero-kicker {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--navy-pale);
+        }
+        
+        .hero-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: #e0e7f0;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 0.5rem 0;
+        }
+        
+        .hero-buttons .btn {
+            min-width: 140px;
+            padding: 0.6rem 1.2rem;
+        }
+        
+        .hero-meta {
+            font-size: 0.85rem;
+            color: var(--navy-pale);
+        }
+        
+        .hero-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.3);
+            aspect-ratio: 4/3;
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-image span {
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.6rem;
+        }
+        
+        /* ===== SECTIONS ===== */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .page-title {
+            font-size: 1.8rem;
+            color: var(--navy-deep);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--navy-primary);
+            padding-left: 1.5rem;
+        }
+        
+        /* ===== GRILLE COURS ===== */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .course-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--navy-primary);
+            height: 100%;
+        }
+        
+        .course-card i {
+            color: var(--navy-primary);
+            font-size: 1.8rem;
+            min-width: 40px;
+        }
+        
+        .course-card span {
+            font-weight: 500;
+        }
+        
+        .course-special {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .course-special .sub-items {
+            margin-left: 2.5rem;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+        
+        .sub-items div {
+            margin-bottom: 0.3rem;
+            color: var(--navy-primary);
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy-deep);
+            color: #ddd;
+            padding: 2rem 1rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1rem;
+            border-top: 1px solid #2c3e6e;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        /* ===== CONTENU DYNAMIQUE ===== */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        /* ===== MULTILINGUE ===== */
+        [data-lang="fr"] { display: inline; }
+        [data-lang="en"] { display: none; }
+        html[lang="en"] [data-lang="fr"] { display: none; }
+        html[lang="en"] [data-lang="en"] { display: inline; }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .desktop-menu, .desktop-actions {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-images {
+                order: -1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-box {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .title-area span:first-child {
+                font-size: 0.6rem;
+            }
+            
+            .title-area span:last-child {
+                font-size: 0.85rem;
+            }
+        }
         @media (max-width: 900px) {
     .contact-grid {
         grid-template-columns: 1fr !important;
@@ -1051,572 +1593,8 @@
     </script>
 </body>
 </html>
-```
-
----
-
-✅ CE QUI FONCTIONNE PARFAITEMENT
-
-Élément Statut
-📱 Menu mobile ✅ Bouton hamburger fonctionnel
-🌐 Langues FR/EN ✅ Boutons visibles et fonctionnels
-🔘 Boutons S'inscrire/Connexion ✅ Visibles partout
-🏠 Accueil ✅ 3 boutons (S'inscrire, En savoir plus, Nos programmes)
-📚 Cours ✅ Carte 7 avec sous-items bien alignés
-📱 Resp        color: var(--text-dark);
-        background-color: var(--bg-light);
-        line-height: 1.6;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
     
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    /* ====== HEADER ====== */
-    header {
-        background: var(--navy-primary);
-        color: white;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        width: 100%;
-    }
-    
-    .nav-bar {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        position: relative;
-    }
-    
-    .nav-left {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex: 1;
-    }
-    
-    .logo-box {
-        width: 55px;
-        height: 55px;
-        border: 2px solid rgba(255,255,255,0.3);
-        border-radius: var(--radius-sm);
-        overflow: hidden;
-        background: white;
-        flex-shrink: 0;
-    }
-    
-    .logo-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .nav-title-group {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .nav-title-group span:first-child {
-        font-size: clamp(0.65rem, 2vw, 0.75rem);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--navy-pale);
-        line-height: 1.3;
-    }
-    
-    .nav-title-group span:last-child {
-        font-size: clamp(0.85rem, 2.5vw, 1rem);
-        font-weight: 600;
-        line-height: 1.3;
-    }
-    
-    /* Desktop Navigation */
-    .desktop-nav {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-    }
-    
-    .desktop-nav .nav-links {
-        display: flex;
-        gap: 1.2rem;
-    }
-    
-    .desktop-nav .nav-links a {
-        color: white;
-        font-size: 0.9rem;
-        font-weight: 500;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: var(--transition);
-        border-bottom: 2px solid transparent;
-        padding-bottom: 0.25rem;
-    }
-    
-    .desktop-nav .nav-links a:hover,
-    .desktop-nav .nav-links a.active {
-        border-bottom-color: white;
-    }
-    
-    .desktop-nav .nav-cta {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-    
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        border: 2px solid transparent;
-        white-space: nowrap;
-    }
-    
-    .btn-primary {
-        background: var(--navy-deep);
-        color: white;
-    }
-    
-    .btn-primary:hover {
-        background: #0f1f3a;
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-    }
-    
-    .btn-outline {
-        background: transparent;
-        border: 2px solid rgba(255,255,255,0.5);
-        color: white;
-    }
-    
-    .btn-outline:hover {
-        background: rgba(255,255,255,0.1);
-        transform: translateY(-2px);
-    }
-    
-    .btn-small {
-        padding: 0.3rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    /* Language Selector */
-    .language-selector {
-        display: flex;
-        gap: 0.25rem;
-    }
-    
-    .lang-btn {
-        background: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.3);
-        color: white;
-        padding: 0.25rem 0.6rem;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 0.75rem;
-        font-weight: 600;
-        transition: var(--transition);
-    }
-    
-    .lang-btn:hover {
-        background: rgba(255,255,255,0.2);
-    }
-    
-    .lang-btn.active {
-        background: white;
-        color: var(--navy-deep);
-        border-color: white;
-    }
-    
-    /* Mobile Toggle */
-    .mobile-toggle {
-        display: none;
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 1.8rem;
-        cursor: pointer;
-        padding: 0.5rem;
-    }
-    
-    /* Mobile Menu */
-    .mobile-menu {
-        display: none;
-        background: var(--navy-deep);
-        padding: 1rem;
-        width: 100%;
-        border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .mobile-menu.show {
-        display: block;
-    }
-    
-    .mobile-menu .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .mobile-menu .nav-links a {
-        color: white;
-        padding: 0.75rem;
-        border-radius: var(--radius-sm);
-        display: block;
-        cursor: pointer;
-        border-left: 3px solid transparent;
-    }
-    
-    .mobile-menu .nav-links a:hover,
-    .mobile-menu .nav-links a.active {
-        background: rgba(255,255,255,0.1);
-        border-left-color: var(--navy-pale);
-    }
-    
-    .mobile-menu .nav-cta {
-        display: flex;
-        gap: 0.75rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .mobile-menu .nav-cta .btn {
-        flex: 1 1 auto;
-        min-width: 120px;
-    }
-    
-    .mobile-menu .language-selector {
-        justify-content: center;
-        margin-bottom: 1rem;
-    }
-
-    /* ====== HERO ====== */
-    .hero {
-        background: linear-gradient(135deg, var(--navy-deep), var(--navy-primary));
-        color: white;
-        padding: 3rem 1rem;
-    }
-    
-    .hero-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: center;
-    }
-    
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .hero-kicker {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.85rem;
-        color: var(--navy-pale);
-    }
-    
-    .hero-title {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
-        line-height: 1.2;
-        font-weight: 700;
-    }
-    
-    .hero-subtitle {
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
-        color: #e0e7f0;
-        max-width: 600px;
-    }
-    
-    .hero-ctas {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin: 0.5rem 0;
-    }
-    
-    .hero-ctas .btn {
-        min-width: 140px;
-    }
-    
-    .hero-meta {
-        font-size: 0.85rem;
-        color: var(--navy-pale);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .hero-photo-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-    }
-    
-    .hero-photo {
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        border: 2px solid rgba(255,255,255,0.3);
-        aspect-ratio: 4/3;
-        position: relative;
-    }
-    
-    .hero-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .hero-photo span {
-        position: absolute;
-        bottom: 0.5rem;
-        left: 0.5rem;
-        background: rgba(0,0,0,0.5);
-        color: white;
-        padding: 0.2rem 0.5rem;
-        border-radius: 20px;
-        font-size: 0.65rem;
-        backdrop-filter: blur(4px);
-    }
-
-    /* ====== SECTIONS ====== */
-    .section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2.5rem 1rem;
-    }
-    
-    .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .section-title {
-        font-size: clamp(1.3rem, 4vw, 1.8rem);
-        color: var(--navy-deep);
-        font-weight: 700;
-    }
-    
-    .section-subtitle {
-        color: var(--navy-medium);
-        font-size: 0.95rem;
-    }
-    
-    .page-title {
-        color: var(--navy-deep);
-        font-size: clamp(1.5rem, 5vw, 2rem);
-        margin-bottom: 2rem;
-        border-left: 5px solid var(--navy-primary);
-        padding-left: 1.5rem;
-        font-weight: 700;
-    }
-
-    /* ====== QUICK PATHS ====== */
-    .paths {
-        background: white;
-        border-radius: var(--radius-lg);
-        padding: 2rem;
-        box-shadow: var(--shadow-sm);
-    }
-    
-    .paths-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .path-card {
-        background: var(--bg-light);
-        border-radius: var(--radius-md);
-        padding: 1.5rem;
-        border: 1px solid var(--navy-pale);
-        transition: var(--transition);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .path-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-    }
-    
-    .path-label {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--navy-primary);
-        margin-bottom: 0.5rem;
-    }
-    
-    .path-title {
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: var(--navy-deep);
-        margin-bottom: 0.5rem;
-    }
-    
-    .path-desc {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 1rem;
-        flex: 1;
-    }
-    
-    .path-link {
-        color: var(--navy-primary);
-        font-weight: 600;
-        font-size: 0.9rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.3rem;
-        transition: var(--transition);
-        cursor: pointer;
-    }
-    
-    .path-link:hover {
-        gap: 0.5rem;
-        color: var(--navy-deep);
-    }
-
-    /* ====== DISCIPLINES GRID ====== */
-    .disciplines-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
-    }
-    
-    .disc-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: var(--radius-md);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        border: 1px solid var(--navy-pale);
-        position: relative;
-        overflow: hidden;
-        min-height: 100px;
-        height: 100%;
-    }
-    
-    .disc-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: var(--navy-primary);
-        transition: var(--transition);
-    }
-    
-    .disc-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-    }
-    
-    .disc-card:hover::before {
-        background: var(--navy-deep);
-    }
-    
-    .disc-card i {
-        color: var(--navy-primary);
-        font-size: 1.8rem;
-        min-width: 40px;
-        text-align: center;
-        transition: var(--transition);
-    }
-    
-    .disc-card:hover i {
-        color: var(--navy-deep);
-        transform: scale(1.1);
-    }
-    
-    .disc-card span {
-        font-weight: 500;
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-
-    /* ====== FEE CARDS ====== */
-    .fees-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem 0;
-    }
-    
-    .fee-card {
-        background: white;
-        padding: 2rem;
-        border-radius: var(--radius-md);
-        border-top: 5px solid var(--navy-primary);
-        box-shadow: var(--shadow-sm);
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .fee-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-    }
-    
-    .fee-price {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        color: var(--navy-deep);
-        font-weight: 700;
-        margin: 1rem 0;
-    }
-    
-    .fee-sub {
-        color: #666;
-        font-style: italic;
-        margin-bottom: 1rem;
-    }
-    
-    .payment-guide {
-        background: white;
-        padding: 2rem;
-        border-radius: var(--radius-md);
-        margin: 2rem 0;
-        box-shadow: var(--shadow-sm);
-    }
-    
-    .guide-steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin: 2rem 0;
-    }
-    
-    .guide-step {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+                    }
         padding: 1rem;
         background: var(--bg-light);
         border-radius: var(--radius-sm);
@@ -1918,77 +1896,6 @@
 
     /* ====== CHAT WIDGET ====== */
     .chat-widget {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-    }
-    
-    .chat-button {
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        background: var(--navy-primary);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        cursor: pointer;
-        box-shadow: var(--shadow-lg);
-        transition: var(--transition);
-        border: none;
-    }
-    
-    .chat-button:hover {
-        background: var(--navy-deep);
-        transform: scale(1.1);
-    }
-    
-    .chat-box {
-        position: absolute;
-        bottom: 70px;
-        right: 0;
-        width: 300px;
-        height: 400px;
-        background: white;
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-lg);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-    }
-    
-    .chat-box.open {
-        display: flex;
-    }
-    
-    .chat-header {
-        background: var(--navy-primary);
-        color: white;
-        padding: 1rem;
-        font-weight: 600;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .chat-header button {
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
-    
-    .chat-messages {
-        flex: 1;
-        padding: 1rem;
-        overflow-y: auto;
-        background: #f5f5f5;
-    }
-    
-    .message {
         max-width: 80%;
         padding: 0.5rem 1rem;
         border-radius: 18px;
