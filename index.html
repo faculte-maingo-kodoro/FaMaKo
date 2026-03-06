@@ -1373,10 +1373,16 @@
                     <button class="lang-btn active" id="langFr">FR</button>
                     <button class="lang-btn" id="langEn">EN</button>
                 </div>
-                <div class="auth-buttons">
-                    <button class="btn btn-outline" onclick="document.querySelector('[data-target=contact]').click()">Sign In</button>
-                    <button class="btn btn-primary" onclick="document.querySelector('[data-target=contact]').click()">Sign Up</button>
-                </div>
+               <div class="auth-buttons">
+    <button class="btn btn-outline" onclick="document.querySelector('[data-target=contact]').click()">
+        <span data-lang="fr">Se connecter</span>
+        <span data-lang="en">Sign In</span>
+    </button>
+    <button class="btn btn-primary" onclick="document.querySelector('[data-target=contact]').click()">
+        <span data-lang="fr">S'inscrire</span>
+        <span data-lang="en">Sign Up</span>
+    </button>
+</div>
             </div>
             
             <button class="nav-toggle" aria-label="Menu">☰</button>
@@ -1447,7 +1453,7 @@
                     <div class="section-header">
                         <h2 class="section-title" data-lang="fr">Votre parcours vers le doctorat</h2>
                         <h2 class="section-title" data-lang="en">Your path to PhD</h2>
-                        <p class="section-subtitle" data-lang="fr">Le DSPR est obligatoire avant d'accéder au cycle doctoral.</p>
+                        <p class="section-subtitle" data-lang="fr">Le DSPR est obligatoire avant d'accéder au doctoral.</p>
                         <p class="section-subtitle" data-lang="en">DSPR is mandatory before PhD program.</p>
                     </div>
                     <div class="paths-grid">
