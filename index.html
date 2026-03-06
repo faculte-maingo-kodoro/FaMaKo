@@ -158,6 +158,30 @@
         font-size: 1.8rem;
         cursor: pointer;
     }
+    /* Pour aligner les éléments à droite horizontalement */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.language-selector {
+    display: flex;
+    gap: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
 
     /* ====== MOBILE MENU ====== */
     .mobile-menu {
@@ -1127,25 +1151,28 @@
                     <img src="logo_famako_original.jpg" alt="Logo FaMaKo" onerror="this.src='https://via.placeholder.com/65x65/1a2b4c/ffffff?text=FMK'">
                 </div>
                 <div class="nav-title-group">
-                    <span data-lang="fr">Faculté Maïngo Ködörö</span>
-                    <span data-lang="en">Maïngo Ködörö Faculty</span>
-                    <span data-lang="fr">Bangui, RCA</span>
-                    <span data-lang="en">Bangui, CAR</span>
-                </div>
-            </div>
-            <nav class="nav-links">
-                <a href="#" data-target="accueil" class="active"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
-                <a href="#" data-target="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
-                <a href="#" data-target="disciplines"><span data-lang="fr">Cours</span><span data-lang="en">Courses</span></a>
-                <a href="#" data-target="reglement"><span data-lang="fr">Règlement</span><span data-lang="en">Rules</span></a>
-                <a href="#" data-target="frais"><span data-lang="fr">Frais</span><span data-lang="en">Fees</span></a>
-                <a href="#" data-target="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
-            </nav>
-            <div class="language-selector">
-                <button class="lang-btn active" id="langFr">FR</button>
-                <button class="lang-btn" id="langEn">EN</button>
-            </div>
-            <button class="nav-toggle" aria-label="Menu">☰</button>
+    <span>Faculté Maïngo Ködörö, comprendre pour mieux développer</span>
+    <span>Bangui, RCA</span>
+</div>
+<nav class="nav-links">
+    <a href="#" data-target="accueil" class="active"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+    <a href="#" data-target="presentation"><span data-lang="fr">Présentation</span><span data-lang="en">About</span></a>
+    <a href="#" data-target="disciplines"><span data-lang="fr">Cours</span><span data-lang="en">Courses</span></a>
+    <a href="#" data-target="reglement"><span data-lang="fr">Règlement</span><span data-lang="en">Rules</span></a>
+    <a href="#" data-target="frais"><span data-lang="fr">Frais</span><span data-lang="en">Fees</span></a>
+    <a href="#" data-target="contact"><span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+</nav>
+<div class="nav-right">
+    <div class="language-selector">
+        <button class="lang-btn active" id="langFr">FR</button>
+        <button class="lang-btn" id="langEn">EN</button>
+    </div>
+    <div class="auth-buttons">
+        <button class="btn btn-outline" onclick="document.querySelector('[data-target=contact]').click()">Sign In</button>
+        <button class="btn btn-primary" onclick="document.querySelector('[data-target=contact]').click()">Sign Up</button>
+    </div>
+</div>
+<button class="nav-toggle" aria-label="Menu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
             <a href="#" data-target="accueil"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
