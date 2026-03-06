@@ -114,7 +114,24 @@
         object-fit: cover;
     }
         /* ====== HEADER RESPONSIVE ====== */
-@media (max-width: 900px) {
+/* Par défaut : afficher le français, cacher l'anglais */
+[data-lang="fr"] {
+    display: inline;
+}
+
+[data-lang="en"] {
+    display: none;
+}
+
+/* Quand la langue est anglaise : cacher le français, afficher l'anglais */
+html[lang="en"] [data-lang="fr"] {
+    display: none;
+}
+
+html[lang="en"] [data-lang="en"] {
+    display: inline;
+}
+        @media (max-width: 900px) {
     .nav-bar {
         flex-wrap: wrap;
         padding: 0.5rem 1rem;
@@ -1352,11 +1369,14 @@
                 <img src="logo_famako_original.jpg" alt="Logo FaMaKo" onerror="this.src='https://via.placeholder.com/65x65/1a2b4c/ffffff?text=FMK'">
             </div>
             <div class="nav-title-group">
-                <span data-lang="fr">Faculté Maïngo Ködörö, comprendre pour mieux développer</span>
-                <span data-lang="en">Maïngo Ködörö Faculty, understand to better develop</span>
-                <span data-lang="fr">Bangui, RCA</span>
-                <span data-lang="en">Bangui, CAR</span>
-            </div>
+    <!-- Version française -->
+    <span data-lang="fr">Faculté Maïngo Ködörö, comprendre pour mieux développer</span>
+    <!-- Version anglaise -->
+    <span data-lang="en">Maïngo Ködörö Faculty, understand to better develop</span>
+    
+    <span data-lang="fr">Bangui, RCA</span>
+    <span data-lang="en">Bangui, CAR</span>
+</div>
         </div>
             
             <nav class="nav-links">
