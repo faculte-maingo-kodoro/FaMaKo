@@ -113,6 +113,84 @@
         height: 100%;
         object-fit: cover;
     }
+        /* ====== HEADER RESPONSIVE ====== */
+@media (max-width: 900px) {
+    .nav-bar {
+        flex-wrap: wrap;
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .nav-title-group {
+        flex: 1;
+    }
+    
+    .nav-title-group span:first-child {
+        font-size: 0.8rem;
+        white-space: normal;
+        line-height: 1.3;
+        word-break: break-word;
+    }
+    
+    .nav-title-group span:last-child {
+        font-size: 0.7rem;
+    }
+    
+    .nav-links { 
+        display: none; 
+    }
+    
+    .nav-right {
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
+        order: 3;
+        margin-top: 0.5rem;
+    }
+    
+    .nav-toggle { 
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-left {
+        padding-right: 50px; /* Éviter le chevauchement avec le bouton menu */
+    }
+    
+    .nav-title-group span:first-child {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-box {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-title-group span:first-child {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    
+    .nav-title-group span:last-child {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .nav-title-group span:first-child {
+        font-size: 0.65rem;
+    }
+}
     
     .nav-title-group {
         display: flex;
@@ -1267,18 +1345,19 @@
     </style>
 </head>
 <body>
-    <!-- ==================== HEADER ==================== -->
-    <header>
-        <div class="nav-bar">
-            <div class="nav-left">
-                <div class="logo-box">
-                    <img src="logo_famako_original.jpg" alt="Logo FaMaKo" onerror="this.src='https://via.placeholder.com/65x65/1a2b4c/ffffff?text=FMK'">
-                </div>
-                <div class="nav-title-group">
-                    <span>Faculté Maïngo Ködörö, comprendre pour mieux développer</span>
-                    <span>Bangui, RCA</span>
-                </div>
+   <header>
+    <div class="nav-bar">
+        <div class="nav-left">
+            <div class="logo-box">
+                <img src="logo_famako_original.jpg" alt="Logo FaMaKo" onerror="this.src='https://via.placeholder.com/65x65/1a2b4c/ffffff?text=FMK'">
             </div>
+            <div class="nav-title-group">
+                <span data-lang="fr">Faculté Maïngo Ködörö, comprendre pour mieux développer</span>
+                <span data-lang="en">Maïngo Ködörö Faculty, understand to better develop</span>
+                <span data-lang="fr">Bangui, RCA</span>
+                <span data-lang="en">Bangui, CAR</span>
+            </div>
+        </div>
             
             <nav class="nav-links">
                 <a href="#" data-target="accueil" class="active"><span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
