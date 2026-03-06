@@ -474,6 +474,20 @@ html[lang="en"] [data-lang="en"] {
         border-radius: 20px;
         font-size: 0.7rem;
     }
+        /* Ajustement du hero */
+.hero {
+    padding: 2rem 1.5rem; /* Réduire si trop d'espace */
+}
+
+.hero-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
 
     /* ====== QUICK PATHS ====== */
     .section {
@@ -500,57 +514,83 @@ html[lang="en"] [data-lang="en"] {
         color: #666;
     }
     
-    .paths {
-        background: white;
-        border-radius: var(--radius-lg);
-        padding: 2rem;
-        box-shadow: var(--shadow-sm);
-    }
-    
-    .paths-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-    }
-    
-    .path-card {
-        background: var(--bg-light);
-        padding: 1.5rem;
-        border-radius: var(--radius-md);
-        border: 1px solid var(--navy-pale);
-        transition: var(--transition);
-    }
-    
-    .path-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-    }
-    
-    .path-label {
-        font-size: 0.8rem;
-        color: var(--navy-primary);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 0.5rem;
-    }
-    
-    .path-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-    
-    .path-desc {
-        color: #666;
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-    }
-    
-    .path-link {
-        color: var(--navy-primary);
-        font-weight: 600;
-    }
+  /* Styles pour les cartes */
+.path-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eef2f6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.path-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.path-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2c3e6e;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.path-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0a1a2f;
+    margin-bottom: 0.8rem;
+}
+
+.path-desc {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    flex: 1;
+}
+
+.path-link {
+    color: #2c3e6e;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.2s;
+    margin-top: auto;
+}
+
+.path-link:hover {
+    color: #0a1a2f;
+    gap: 0.5rem;
+}
+
+/* Grille responsive */
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .paths-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .paths-grid {
+        grid-template-columns: 1fr;
+    }
+}
     /* ====== PAGE TITLE ====== */
     .page-title {
         color: var(--navy-deep);
@@ -1420,23 +1460,22 @@ html[lang="en"] [data-lang="en"] {
 
     <!-- ==================== MAIN CONTENT ==================== -->
     <main>
-        <!-- ACCUEIL -->
-        <div class="content-container active" id="accueil-content">
-            <div class="hero">
-                <div class="hero-inner">
-                    <div>
-                        <div class="hero-kicker" data-lang="fr">Inscriptions Doctorat 2026 Ouvertes</div><br>
-                        <div class="hero-kicker" data-lang="en">PhD Applications 2026 Open</div>
-                        
-                        <h1 class="hero-title" data-lang="fr">Bienvenue à la Faculté Maïngo Ködörö, d'inspiration Baha'ie.</h1><br>
-                        <h1 class="hero-title" data-lang="en">Welcome to Maïngo Ködörö Faculty, Baha'i inspired.</h1><br>
-                        
-                        <p class="hero-subtitle" data-lang="fr">
-                            Plateforme officielle de formation et de recherche pédagogique en RCA. Formons ensemble les leaders éducatifs de demain. Accès au doctorat après validation de Diplome Superieur de Preparation à la Recherche(DSPR).
-                        </p>
-                        <p class="hero-subtitle" data-lang="en">
-                            Official platform for educational training and research in CAR. Let's train tomorrow's educational leaders together. Access to PhD program after validation of the Higher Diploma in Research Preparation (DSPR).
-                        </p>
+       <!-- ACCUEIL -->
+<div class="content-container active" id="accueil-content">
+    <div class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-kicker" data-lang="fr">Inscriptions Doctorat 2026 Ouvertes</div>
+                <div class="hero-kicker" data-lang="en">PhD Applications 2026 Open</div>
+                
+                <h1 class="hero-title" data-lang="fr">Bienvenue à la Faculté Maïngo Ködörö, d'inspiration Baha'ie.</h1>
+                <h1 class="hero-title" data-lang="en">Welcome to Maïngo Ködörö Faculty, Baha'i inspired.</h1>
+                    <p class="hero-subtitle" data-lang="fr">
+                    Plateforme officielle de formation et de recherche pédagogique en RCA. Formons ensemble les leaders éducatifs de demain. Accès au doctorat après validation de Diplome Superieur de Preparation à la Recherche (DSPR).
+                </p>
+                <p class="hero-subtitle" data-lang="en">
+                    Official platform for educational training and research in CAR. Let's train tomorrow's educational leaders together. Access to PhD program after validation of the Higher Diploma in Research Preparation (DSPR).
+                </p>
                         
                         <div class="hero-ctas">
                             <button class="btn btn-primary" onclick="document.querySelector('[data-target=contact]').click()"><span data-lang="fr">S'inscrire</span><span data-lang="en">Register</span></button>
@@ -1469,54 +1508,73 @@ html[lang="en"] [data-lang="en"] {
                 </div>
             </div>
             <div class="section">
-                <div class="paths">
-                    <div class="section-header">
-                        <h2 class="section-title" data-lang="fr">Votre parcours vers le doctorat</h2>
-                        <h2 class="section-title" data-lang="en">Your path to PhD</h2>
-                        <p class="section-subtitle" data-lang="fr">Le DSPR est obligatoire avant d'accéder au doctoral.</p>
-                        <p class="section-subtitle" data-lang="en">DSPR is mandatory before PhD program.</p>
-                    </div>
-                    <div class="paths-grid">
-                        <article class="path-card">
-                            <div class="path-label" data-lang="fr">Étape 1</div>
-                            <div class="path-label" data-lang="en">Step 1</div>
-                            <div class="path-title" data-lang="fr">Inscription DSPR</div>
-                            <div class="path-title" data-lang="en">DSPR Registration</div>
-                            <p class="path-desc" data-lang="fr">Inscription au programme de (DSPR).</p>
-                            <p class="path-desc" data-lang="en">Registration for DSPR program.</p>
-                            <a href="#" data-target="reglement" class="path-link"><span data-lang="fr">S'inscrire →</span><span data-lang="en">Register →</span></a>
-                        </article>
-                        <article class="path-card">
-                            <div class="path-label" data-lang="fr">Étape 2</div>
-                            <div class="path-label" data-lang="en">Step 2</div>
-                            <div class="path-title" data-lang="fr">Validation Année</div>
-                            <div class="path-title" data-lang="en">Year Validation</div>
-                            <p class="path-desc" data-lang="fr">Validation des cours et examen de fin d'année.</p>
-                            <p class="path-desc" data-lang="en">Course validation and final exam.</p>
-                            <a href="#" data-target="disciplines" class="path-link"><span data-lang="fr">Voir les cours →</span><span data-lang="en">See courses →</span></a>
-                        </article>
-                        <article class="path-card">
-                            <div class="path-label" data-lang="fr">Étape 3</div>
-                            <div class="path-label" data-lang="en">Step 3</div>
-                            <div class="path-title" data-lang="fr">Accès Doctorat</div>
-                            <div class="path-title" data-lang="en">PhD Access</div>
-                            <p class="path-desc" data-lang="fr">Accès au cycle doctoral après réussite.</p>
-                            <p class="path-desc" data-lang="en">Access to PhD after success.</p>
-                            <a href="#" data-target="presentation" class="path-link"><span data-lang="fr">En savoir plus →</span><span data-lang="en">Learn more →</span></a>
-                        </article>
-                        <article class="path-card">
-                            <div class="path-label" data-lang="fr">13 spécialités</div>
-                            <div class="path-label" data-lang="en">13 specialties</div>
-                            <div class="path-title" data-lang="fr">Disciplines variées</div>
-                            <div class="path-title" data-lang="en">Various disciplines</div>
-                            <p class="path-desc" data-lang="fr">Philosophie, psychologie, pédagogie...</p>
-                            <p class="path-desc" data-lang="en">Philosophy, psychology, pedagogy...</p>
-                            <a href="#" data-target="disciplines" class="path-link"><span data-lang="fr">Découvrir →</span><span data-lang="en">Discover →</span></a>
-                        </article>
-                    </div>
-                </div>
-            </div>
+    <div class="paths">
+        <div class="section-header">
+            <h2 class="section-title" data-lang="fr">Votre parcours vers le doctorat</h2>
+            <h2 class="section-title" data-lang="en">Your path to PhD</h2>
+            <p class="section-subtitle" data-lang="fr">Le DSPR est obligatoire avant d'accéder au Doctorat.</p>
+            <p class="section-subtitle" data-lang="en">DSPR is mandatory before PhD program.</p>
         </div>
+        
+        <div class="paths-grid">
+            <!-- Étape 1 -->
+            <article class="path-card">
+                <div class="path-label" data-lang="fr">Étape 1</div>
+                <div class="path-label" data-lang="en">Step 1</div>
+                <div class="path-title" data-lang="fr">Inscription DSPR</div>
+                <div class="path-title" data-lang="en">DSPR Registration</div>
+                <p class="path-desc" data-lang="fr">Inscription au programme de préparation à la recherche (DSPR).</p>
+                <p class="path-desc" data-lang="en">Registration for the research preparation program (DSPR).</p>
+                <a href="#" data-target="reglement" class="path-link">
+                    <span data-lang="fr">S'inscrire →</span>
+                    <span data-lang="en">Register →</span>
+                </a>
+            </article>
+
+            <!-- Étape 2 -->
+            <article class="path-card">
+                <div class="path-label" data-lang="fr">Étape 2</div>
+                <div class="path-label" data-lang="en">Step 2</div>
+                <div class="path-title" data-lang="fr">Validation Année</div>
+                <div class="path-title" data-lang="en">Year Validation</div>
+                <p class="path-desc" data-lang="fr">Validation des cours et examen de fin d'année.</p>
+                <p class="path-desc" data-lang="en">Course validation and final exam.</p>
+                <a href="#" data-target="disciplines" class="path-link">
+                    <span data-lang="fr">Voir les cours →</span>
+                    <span data-lang="en">See courses →</span>
+                </a>
+            </article>
+
+            <!-- Étape 3 -->
+            <article class="path-card">
+                <div class="path-label" data-lang="fr">Étape 3</div>
+                <div class="path-label" data-lang="en">Step 3</div>
+                <div class="path-title" data-lang="fr">Accès Doctorat</div>
+                <div class="path-title" data-lang="en">PhD Access</div>
+                <p class="path-desc" data-lang="fr">Accès au cycle doctoral après réussite.</p>
+                <p class="path-desc" data-lang="en">Access to PhD program after success.</p>
+                <a href="#" data-target="presentation" class="path-link">
+                    <span data-lang="fr">En savoir plus →</span>
+                    <span data-lang="en">Learn more →</span>
+                </a>
+            </article>
+
+            <!-- 13 spécialités -->
+            <article class="path-card">
+                <div class="path-label" data-lang="fr">13 spécialités</div>
+                <div class="path-label" data-lang="en">13 specialties</div>
+                <div class="path-title" data-lang="fr">Disciplines variées</div>
+                <div class="path-title" data-lang="en">Various disciplines</div>
+                <p class="path-desc" data-lang="fr">Philosophie, psychologie, pédagogie...</p>
+                <p class="path-desc" data-lang="en">Philosophy, psychology, pedagogy...</p>
+                <a href="#" data-target="disciplines" class="path-link">
+                    <span data-lang="fr">Découvrir →</span>
+                    <span data-lang="en">Discover →</span>
+                </a>
+            </article>
+        </div>
+    </div>
+</div>
 
         <!-- PRÉSENTATION -->
         <div class="content-container" id="presentation-content">
